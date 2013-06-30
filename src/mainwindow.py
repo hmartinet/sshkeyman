@@ -138,7 +138,7 @@ class MainWindow(QMainWindow, Ui_main):
         
         i=0
         for servers in self._servers[u'servers'].values():
-            for server_name, server in servers.items():
+            for server_name, server in sorted(servers.items()):
                 for user in server[u'users']:
                     i += 1
                     self._splash.setProgress(float(i)/float(total), u'%s %s %s settings...' % (u'Writing' if action == u'commit' else u'Loading', server_name, user))
