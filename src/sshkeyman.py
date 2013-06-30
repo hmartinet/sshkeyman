@@ -8,17 +8,21 @@ from profiledialog import ProfileDialog
 import socket
 import jsonschema
 
+first_run = True
+
 def main(argv):
+    global first_run
+    
     app = QApplication(argv, True)
     
     settings = QSettings('sshkeyman', 'sshkeyman')
     
     no_connection = True
     wnd = None
-    profile_dialog = ProfileDialog(settings)
+    profile_dialog = ProfileDialog(settings, first_run)
     while (no_connection):
         try:   
-            if not profile_dialog.selected_profile():
+            if not profile_dialog.selected_profile() or not first_run:
                 profile_dialog.exec_()
             profile = profile_dialog.selected_profile()
             if not profile:
@@ -44,6 +48,7 @@ def main(argv):
     
     app.exec_()
     if wnd.reload_profiles():
+        first_run = False
         main(argv)
  
 if __name__ == "__main__":

@@ -13,13 +13,13 @@ class ProfileDialog(QDialog, Ui_profile_dialog):
     
     _selected_profile = None
  
-    def __init__(self, settings):
+    def __init__(self, settings, load_default):
         QDialog.__init__(self)
         self.setupUi(self)
         
         self._settings = settings
         self._profiles = json.loads(str(settings.value('profiles', '{}').toString()))
-        self.load_profiles()
+        self.load_profiles(load_default)
             
         self.add_button.clicked.connect(self.add_profile)
         self.remove_button.clicked.connect(self.remove_profile)
@@ -34,14 +34,14 @@ class ProfileDialog(QDialog, Ui_profile_dialog):
     def selected_profile(self):
         return self._selected_profile
         
-    def load_profiles(self):
+    def load_profiles(self, load_default):
         while self.profile_list.count() > 0:
             self.profile_list.takeItem(0)
         for profile_name, profile in self._profiles.items():
             item = QListWidgetItem(unicode(profile_name) + (u' (default)' if profile['default'] else u''))
             item.setData(Qt.UserRole, unicode(profile_name))
             self.profile_list.addItem(item)
-            if profile['default']:
+            if load_default and profile['default']:
                 self._selected_profile = profile
             
     def add_profile(self):
