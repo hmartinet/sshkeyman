@@ -18,7 +18,8 @@ def main(argv):
     profile_dialog = ProfileDialog(settings)
     while (no_connection):
         try:   
-            profile_dialog.exec_()
+            if not profile_dialog.selected_profile():
+                profile_dialog.exec_()
             profile = profile_dialog.selected_profile()
             if not profile:
                 sys.exit()

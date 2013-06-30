@@ -41,6 +41,8 @@ class ProfileDialog(QDialog, Ui_profile_dialog):
             item = QListWidgetItem(unicode(profile_name) + (u' (default)' if profile['default'] else u''))
             item.setData(Qt.UserRole, unicode(profile_name))
             self.profile_list.addItem(item)
+            if profile['default']:
+                self._selected_profile = profile
             
     def add_profile(self):
         edit_profile_dialog = EditProfileDialog()
