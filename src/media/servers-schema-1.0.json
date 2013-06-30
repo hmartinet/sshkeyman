@@ -1,0 +1,23 @@
+{
+	"type" : "object",
+	"properties" : {
+		"type": { "type" : "string", "pattern": "^sshkeyman-servers-configuration$" },
+		"version": { "type" : "string", "pattern": "^1\\.0$" },
+		"servers" : {
+			"type" : "object",
+		    "additionalProperties": { 
+		       "type": "object", 
+			   "additionalProperties": { 
+			       "type": "object", 
+			       "properties": {
+			    	   "host": { "type" : "string" },
+			    	   "users": {
+			    		   "type": "array",
+			    		   "items": { "type" : "string" }
+			    	   }
+			       }
+			    } 
+		    } 
+		}
+	}
+}

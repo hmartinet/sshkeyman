@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/__init__.py=utf-8
+encoding//src/addkeydialog.py=utf-8
+encoding//src/editprofiledialog.py=utf-8
+encoding//src/mainwindow.py=utf-8
+encoding//src/profiledialog.py=utf-8
+encoding//src/splashscreen.py=utf-8
+encoding//src/sshkeyman.py=utf-8
+encoding//src/ui/__init__.py=utf-8
+encoding//src/ui/addkeydialogui.py=utf-8
+encoding//src/ui/editprofiledialogui.py=utf-8
+encoding//src/ui/mainwindowui.py=utf-8
