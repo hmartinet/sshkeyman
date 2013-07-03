@@ -185,11 +185,16 @@ class MainWindow(QMainWindow, Ui_main):
                 proto = keyline[0].rstrip()
                 key = keyline[1].rstrip()
                 keyname = keyline[2].rstrip()
+                
+                for i_keyname, i_key in self._keys.items():
+                    if i_keyname != keyname and i_key[u'proto'] == proto and i_key[u'key'] == key:
+                        keyname = i_keyname
+                
                 i = 1
                 while self._keys.has_key(keyname):
                     if self._keys[keyname][u'proto'] != proto or self._keys[keyname][u'key'] != key:
                         i += 1
-                        keyname = keyline[2] + u' (%s)' % i
+                        keyname = keyline[2] + u'_%s' % i
                     else:
                         if not (server_name, user) in self._keys[keyname][u'servers']:
                             self._keys[keyname][u'servers'].append((server_name, user))
