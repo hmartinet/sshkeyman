@@ -158,9 +158,13 @@
  </widget>
  <tabstops>
   <tabstop>button_box</tabstop>
-  <tabstop>file_edit</tabstop>
+  <tabstop>name_edit</tabstop>
+  <tabstop>default_checkbox</tabstop>
   <tabstop>host_edit</tabstop>
   <tabstop>user_edit</tabstop>
+  <tabstop>key_edit</tabstop>
+  <tabstop>key_choose_button</tabstop>
+  <tabstop>file_edit</tabstop>
  </tabstops>
  <resources/>
  <connections/>

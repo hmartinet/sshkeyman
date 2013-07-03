@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'qtcreator/sshkeyman/editprofiledialog.ui'
 #
-# Created: Sun Jun 30 22:39:29 2013
+# Created: Wed Jul  3 14:11:59 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -100,9 +100,13 @@ class Ui_edit_profile_dialog(object):
 
         self.retranslateUi(edit_profile_dialog)
         QtCore.QMetaObject.connectSlotsByName(edit_profile_dialog)
-        edit_profile_dialog.setTabOrder(self.button_box, self.file_edit)
-        edit_profile_dialog.setTabOrder(self.file_edit, self.host_edit)
+        edit_profile_dialog.setTabOrder(self.button_box, self.name_edit)
+        edit_profile_dialog.setTabOrder(self.name_edit, self.default_checkbox)
+        edit_profile_dialog.setTabOrder(self.default_checkbox, self.host_edit)
         edit_profile_dialog.setTabOrder(self.host_edit, self.user_edit)
+        edit_profile_dialog.setTabOrder(self.user_edit, self.key_edit)
+        edit_profile_dialog.setTabOrder(self.key_edit, self.key_choose_button)
+        edit_profile_dialog.setTabOrder(self.key_choose_button, self.file_edit)
 
     def retranslateUi(self, edit_profile_dialog):
         edit_profile_dialog.setWindowTitle(_translate("edit_profile_dialog", "Edit Profile", None))

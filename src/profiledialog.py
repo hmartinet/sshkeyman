@@ -55,7 +55,7 @@ class ProfileDialog(QDialog, Ui_profile_dialog):
                     profile['default'] = False
             self._profiles[edit_profile_dialog.profile_name()] = new_profile
             self._settings.setValue('profiles', json.dumps(self._profiles))
-            self.load_profiles()
+            self.load_profiles(False)
         
     def remove_profile(self):
         if self.profile_list.selectedItems():

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'qtcreator/sshkeyman/addkeydialog.ui'
 #
-# Created: Sun Jun 30 22:39:29 2013
+# Created: Wed Jul  3 14:11:59 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
