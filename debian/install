@@ -1,0 +1,4 @@
+sshkeyman /usr/share/sshkeyman/
+*.py /usr/share/sshkeyman/
+ui/*.py /usr/share/sshkeyman/ui/
+media /usr/share/sshkeyman/
