@@ -86,10 +86,11 @@ class MainWindow(QMainWindow, Ui_main):
     def load_server_list(self):
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-
+        
         try:
             ssh.connect(self._profile[u'host'], username=self._profile[u'user'], 
-                        key_filename=self._profile[u'key'] if self._profile[u'key'] else None)
+                        key_filename=self._profile[u'key'] if self._profile[u'key'] else None,
+                        timeout=self._profile[u'timeout'])
         except socket.error as ex:
             self._splash.close()
             raise ex
@@ -157,7 +158,8 @@ class MainWindow(QMainWindow, Ui_main):
         
     def load_key_list_from(self, ssh, server_name, host, user, action):
         try:
-            ssh.connect(host, username=user, key_filename=self._profile[u'key'] if self._profile[u'key'] else None)
+            ssh.connect(host, username=user, key_filename=self._profile[u'key'] if self._profile[u'key'] else None,
+                        timeout=self._profile[u'timeout'])
         except:
             ssh.close()
             self.server_tree.blockSignals(True)

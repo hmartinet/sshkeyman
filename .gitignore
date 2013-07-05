@@ -1,3 +1,4 @@
 *.pyc
 qtcreator/sshkeyman/sshkeyman.pro.user*
+target/
 

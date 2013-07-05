@@ -1,5 +1,8 @@
 #!/usr/bin/make -f
 
+make:
+	chmod +x /usr/bin/sshkeyman
+
 %:
 	dh $@
 	

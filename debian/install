@@ -1,4 +1,6 @@
-sshkeyman /usr/share/sshkeyman/
+sshkeyman /usr/bin/
+icon.svg /usr/share/sshkeyman/
+sshkeyman.desktop /usr/share/applications/
 *.py /usr/share/sshkeyman/
 ui/*.py /usr/share/sshkeyman/ui/
 media /usr/share/sshkeyman/

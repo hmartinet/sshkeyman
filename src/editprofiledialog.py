@@ -25,11 +25,14 @@ class EditProfileDialog(QDialog, Ui_edit_profile_dialog):
                 self.key_edit.setText(unicode(profile['key']))
             if 'file' in profile:
                 self.file_edit.setText(unicode(profile['file']))
+            if 'timeout' in profile:
+                self.timeout_spinbox.setValue(float(profile['timeout']))                
         
         self.name_edit.textChanged.connect(self.check_form)
         self.host_edit.textChanged.connect(self.check_form)
         self.user_edit.textChanged.connect(self.check_form)
         self.file_edit.textChanged.connect(self.check_form)
+        self.timeout_spinbox.valueChanged.connect(self.check_form)
         self.button_box.rejected.connect(self.close)
         self.button_box.accepted.connect(self.save_profile)
         self.key_choose_button.clicked.connect(self.open_file_chooser)
@@ -51,7 +54,8 @@ class EditProfileDialog(QDialog, Ui_edit_profile_dialog):
             'user': unicode(self.user_edit.text()),
             'key': unicode(self.key_edit.text()),
             'file': unicode(self.file_edit.text()),
-            'default': self.default_checkbox.isChecked()
+            'default': self.default_checkbox.isChecked(),
+            'timeout': self.timeout_spinbox.value()
         }
         self.close()
         

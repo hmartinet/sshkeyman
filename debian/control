@@ -8,5 +8,6 @@ Standards-Version: 3.9.2
 Package: sshkeyman
 Architecture: all
 Section: utils
-Depends: python (>= 2.7), python-qt4 (>= 4.7), python-paramiko (>= 1.7), python-jsonschema
-Description: This software provides an UI to manage SSH keys on multiple servers
+Depends: python (>= 2.7), python-qt4 (>= 4.7), python-paramiko (>= 1.7), python-support (>= 1.0), python-jsonschema
+Description: Manage SSH keys on multiple servers
+	This software provides an UI to manage SSH keys on multiple servers

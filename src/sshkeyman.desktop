@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=SSH key manager
+Comment=SSH key manager for multiple servers
+Exec=sshkeyman
+Terminal=false
+Type=Application
+Icon=/usr/share/sshkeyman/icon.svg
+Categories=Utility;Application;
